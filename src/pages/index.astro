@@ -1,0 +1,211 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { ExternalLinkListItem, UnorderedIconList } from "../components"
+---
+
+<Layout description="Reupen Shah – expert Python developer">
+  <p>
+    I’m a skilled software developer that enjoys tackling problems methodically,
+    contributing to open-source projects and keeping up to date with
+    technological developments.
+  </p>
+  <p>
+    My main language is Python, and I’m skilled with Django, asyncio, Flask,
+    PostgreSQL, Elasticsearch, TypeScript, React, Git, Linux and more.
+  </p>
+  <h2 class="title is-2">Recent experience</h2>
+  <h3 class="title is-4">
+    <a href="https://www.digi2al.com/" rel="noreferrer nofollow noopener">
+      {"Digi2al"}
+    </a>{" "}
+     (2020–2023)
+  </h3>
+  <p>
+    Projects I’ve worked on at Digi2al include an assessment platform, a design
+    system and a planning application.
+  </p>
+  <p>
+    Languages, libraries and tools I used on these projects include Python,
+    FastAPI, TypeScript, React, Next.js, Remix, GraphQL, Django, PostgreSQL,
+    Playwright, GitHub Actions and Tauri.
+  </p>
+  <h3 class="title is-4">
+    <a
+      href="https://www.gov.uk/government/organisations/department-for-international-trade/about"
+      rel="noreferrer nofollow noopener"
+    >
+      {"Department for International Trade"}
+    </a>{" "}
+     (2017–2020)
+  </h3>
+  <p>
+    I worked on the API layer of an open-source customer relationship management
+    system, built using Python, Django Rest Framework, PostgreSQL, Elasticsearch
+    and Celery.
+  </p>
+  <h4 class="title is-5">GitHub projects</h4>
+  <UnorderedIconList>
+    <ExternalLinkListItem
+      href={`https://github.com/uktrade/data-hub-api`}
+      label="Data Hub API (main project)"
+    />
+    <ExternalLinkListItem
+      href={`https://github.com/uktrade/flower-runner`}
+      label="Flower runner"
+    />
+    <ExternalLinkListItem
+      href={`https://github.com/uktrade/api-composer-prototype`}
+      label="API composer prototype"
+    />
+  </UnorderedIconList>
+  <h3 class="title is-4">
+    <a
+      href="https://bmlltech.com"
+      title="BMLL Technologies"
+      rel="noreferrer nofollow noopener"
+    >
+      {"BMLL Technologies"}
+    </a>{" "}
+     (2015–2017)
+  </h3>
+  <p>
+    I worked on both the API layer and front end of BMLL’s stock market data
+    analysis platform, built using Python, asyncio, PostgreSQL, Celery and AWS.
+  </p>
+  <h3 class="title is-4">
+    <a
+      href="https://www.about.sainsburys.co.uk/"
+      rel="noreferrer nofollow noopener"
+    >
+      {"Sainsbury’s"}
+    </a>{" "}
+     (2014–2015)
+  </h3>
+  <p>
+    I worked on an online order capacity utilisation forecasting system built
+    using Flask.
+  </p>
+  <h2 class="title is-2">Personal projects</h2>
+  <p>
+    <strong class="project" role="heading" aria-level="3">
+      <a
+        href="https://github.com/reupen/columns_ui"
+        title="Columns UI on GitHub"
+      >
+        {"Columns UI"}
+      </a>
+    </strong>{" "}
+     Extensible C++ UI plugin for the foobar2000 audio player.
+  </p>
+  <p>
+    <strong class="project" role="heading" aria-level="3">
+      <a
+        href="https://github.com/reupen/ipod_manager"
+        title="iPod manager on GitHub"
+      >
+        {"iPod manager"}
+      </a>
+    </strong>{" "}
+     C++ iPod management plugin for the foobar2000 audio player. Involved
+    reverse engineering database formats and communication protocols.
+  </p>
+  <p>
+    <strong class="project" role="heading" aria-level="3">
+      <a href="https://github.com/reupen/aiogithub" title="aiogithub on GitHub">
+        {"aiogithub"}
+      </a>
+    </strong>{" "}
+     Python asyncio-based GitHub API v3 client.
+  </p>
+  <h2 class="title is-2">Links of interest</h2>
+  <h3 class="title is-4">Blog posts</h3>
+  <ul>
+    <li>
+      <a
+        href="https://blog.yuo.be/2018/08/16/__init_subclass__-a-simpler-way-to-implement-class-registries-in-python/"
+      >
+        __init_subclass__ – a simpler way to implement class registries in
+        Python
+      </a>
+    </li>
+    <li>
+      <a href="https://blog.yuo.be/2016/12/07/android-pay-wonderfulness/">
+        The free coffee that almost slipped through my fingers
+      </a>
+    </li>
+    <li>
+      <a href="https://blog.yuo.be/2016/07/10/the-queue-to-nowhere/">
+        The queue to nowhere
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://blog.yuo.be/2016/05/08/python-3-5-getting-to-grips-with-type-hints/"
+      >
+        Python 3.5: Getting to grips with type hints
+      </a>
+    </li>
+  </ul>
+
+  <h3 class="title is-4">Pull requests</h3>
+  <ul>
+    <li>
+      <a href="https://github.com/encode/django-rest-framework/pull/6512">
+        Enforce allow_empty=False during partial validation of parent serializer
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/encode/django-rest-framework/pull/6867">
+        Add support for pagination in OpenAPI response schemas
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/django-mptt/django-mptt/pull/724">
+        Add Django 3 support
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/uktrade/data-hub-api/pull/2682">
+        Add workaround for Django 3 memory leak under gevent
+      </a>
+    </li>
+  </ul>
+
+  <h3 class="title is-4">Bug reports</h3>
+  <ul>
+    <li>
+      <a href="https://github.com/getsentry/sentry-python/issues/430">
+        Accumulating memory usage with 0.10.x
+      </a>
+    </li>
+    <li>
+      <a href="https://code.djangoproject.com/ticket/30315">
+        StringAgg with ordering in subquery generates invalid string_agg() SQL
+        function call
+      </a>
+    </li>
+    <li>
+      <a href="https://code.djangoproject.com/ticket/31071">
+        Change in behaviour when saving a model instance with an explicit pk
+        value if the pk field has a default
+      </a>
+    </li>
+    <li>
+      <a href="https://code.djangoproject.com/ticket/31133">
+        Annotations crash with Subquery and DurationFields
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/elastic/elasticsearch/issues/37551">
+        A multi match cross_fields query omits field boosts if there is only one
+        field in that group
+      </a>
+    </li>
+  </ul>
+</Layout>
+
+<style>
+  .project {
+    padding-right: 0.1rem;
+  }
+</style>

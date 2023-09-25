@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build",
+  "framework": "astro",
+  "installCommand": "npm install",
+  "outputDirectory": "dist",
+  "public": true,
+  "trailingSlash": false
+}

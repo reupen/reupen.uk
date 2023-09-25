@@ -1,0 +1,144 @@
+---
+import { Hero } from "../components"
+import "./font-awesome.scss"
+
+export interface Props {
+  title?: string
+  description?: string
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const siteTitle = "Reupen Shah"
+const siteAuthor = "Reupen Shah"
+const { title, description, ...rest } = Astro.props
+
+const computedTitle =
+  title && title !== siteTitle ? `${title} – ${siteTitle}` : siteTitle
+---
+
+<html lang="en" {...rest}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalURL} />
+    <title>{computedTitle}</title>
+    <meta name="generator" content={Astro.generator} />
+    {description && <meta name="description" content={description} />}
+    <meta name="og:title" content={computedTitle} />
+    <meta name="og:site_name" content={siteTitle} />
+    {description && <meta name="og:description" content={description} />}
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content={siteAuthor} />
+    <meta name="twitter:title" content={computedTitle} />
+    {description && <meta name="twitter:description" content={description} />}
+  </head>
+  <body>
+    <Hero />
+    <section class="section">
+      <div class="container">
+        <main><slot /></main>
+      </div>
+    </section>
+  </body>
+</html>
+
+<style>
+  :root {
+    --fa-li-margin: 1.8rem;
+  }
+
+  :global(*),
+  :global(*):after,
+  :global(*):before {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    background: #fff;
+    color: #000;
+    font-family: system-ui, sans-serif;
+    font-size: 24px;
+  }
+
+  :global(body) {
+    margin: 0;
+  }
+
+  :global(h1) {
+    font-size: 72px;
+    margin: 0 0 1.5rem;
+    line-height: 1.15;
+  }
+
+  :global(h2) {
+    font-size: 60px;
+    margin: 2.6rem 0 1.4rem;
+
+    + :global(h3) {
+      margin-top: 1.6rem;
+    }
+  }
+
+  :global(h3) {
+    font-size: 36px;
+    margin: 0 0 1.15rem;
+  }
+
+  :global(p) + :global(h3),
+  :global(ul) + :global(h3) {
+    margin-top: 2rem;
+  }
+
+  :global(h4) {
+    font-size: 26px;
+    margin: 1.2rem 0 1rem;
+  }
+
+  :global(h1, h2, h3, h4) {
+    font-weight: 600;
+  }
+
+  :global(a) {
+    text-decoration: none;
+
+    &,
+    :visited {
+      color: #237cc7;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 0.075em;
+      text-underline-offset: 0.15em;
+    }
+  }
+
+  :global(p) {
+    line-height: 1.5;
+  }
+
+  :global(ul) {
+    line-height: 1.5;
+    padding-left: 2rem;
+  }
+
+  :global(li) {
+    margin: 0.5rem 0;
+
+    @media (min-width: 600px) {
+      margin: 0.25rem 0;
+    }
+  }
+
+  :global(.section) {
+    padding: 2rem 1.5rem;
+  }
+
+  :global(.container) {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+</style>

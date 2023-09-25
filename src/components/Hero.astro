@@ -1,0 +1,70 @@
+---
+import SocialList from "./SocialList.astro"
+import SocialListItem from "./SocialListItem.astro"
+---
+
+<header class="hero">
+  <div class="container">
+    <h1>Reupen Shah</h1>
+    <SocialList>
+      <SocialListItem
+        href="https://github.com/reupen"
+        iconClass="fab fa-github"
+      >
+        {"GitHub"}
+      </SocialListItem>
+      <SocialListItem
+        href="https://linkedin.com/in/reupen"
+        iconClass="fab fa-linkedin"
+      >
+        {"LinkedIn"}
+      </SocialListItem>
+      <SocialListItem
+        href="#"
+        iconClass="far fa-at"
+        class="email"
+        id="email"
+        hidden="hidden"
+      >
+        {"Email"}
+      </SocialListItem>
+    </SocialList>
+  </div>
+</header>
+
+<style>
+  .hero {
+    background: #146eb8;
+    color: #fff;
+    padding: 2.95rem 1.5rem 2.85rem;
+
+    :global(a) {
+      &,
+      &:visited {
+        color: #fff;
+      }
+    }
+  }
+</style>
+
+<script>
+  const encodedEmail =
+    "\xe4\xde\xec\xec\xf2\x94\xf8\xde\xfe\xf4\xde\xf0p\xfe\xea"
+
+  function decodeEmail(email: string) {
+    return email
+      .split("")
+      .map(function (char: string) {
+        return String.fromCharCode((char.charCodeAt(0) - 20) / 2)
+      })
+      .join("")
+  }
+
+  const emailElement = document.getElementById("email")
+  const emailLink = emailElement?.getElementsByTagName("a")[0]
+
+  if (emailElement && emailLink) {
+    emailLink.href = `mailto:${decodeEmail(encodedEmail)}`
+    emailElement.removeAttribute("hidden")
+  }
+</script>

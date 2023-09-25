@@ -1,0 +1,50 @@
+---
+export interface Props {
+  class?: string
+  iconClass: string
+  href: string
+  id?: string
+  hidden?: "hidden"
+}
+
+const { href, iconClass, ...rest } = Astro.props
+---
+
+<li {...rest}>
+  <a href={href} referrerpolicy="no-referrer">
+    <span>
+      <i class={iconClass}></i>
+    </span>
+    <slot />
+  </a>
+</li>
+
+<style>
+  li {
+    margin: 0.5rem 0 0.25rem;
+
+    & i {
+      text-align: center;
+      width: 1.45em;
+      margin-left: -0.1rem;
+      padding-right: 0.25rem;
+    }
+
+    @media (min-width: 600px) {
+      display: inline;
+      padding-right: 1.1rem;
+      margin: 0;
+
+      &.email {
+        margin-left: -0.15rem;
+      }
+
+      & i {
+        width: initial;
+        text-align: left;
+        padding-right: 0.4rem;
+        margin-left: 0.1rem;
+      }
+    }
+  }
+</style>
