@@ -26,10 +26,10 @@
     "test:update": "python scripts/run_in_playwright_container.py \"npm ci && npm exec --no -- playwright test --update-snapshots\""
   },
   "dependencies": {
-    "@astrojs/check": "^0.2.0",
-    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/check": "^0.3.0",
+    "@astrojs/sitemap": "^3.0.2",
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "astro": "^3.2.2",
+    "astro": "^3.4.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "@types/node": "^18.18.3",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
-    "astro-compress": "^2.0.15",
+    "astro-compress": "^2.2.0",
     "cssnano": "^6.0.1",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
