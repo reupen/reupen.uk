@@ -39,7 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
     "astro-compress": "^2.2.5",
-    "cssnano": "^6.0.1",
+    "cssnano": "^6.0.2",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-astro": "^0.30.0",
