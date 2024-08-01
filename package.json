@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.9.1",
-    "@playwright/test": "^1.44.1",
+    "@playwright/test": "^1.45.3",
     "@types/node": "^20.14.2",
     "@typescript-eslint/eslint-plugin": "^7.13.0",
     "@typescript-eslint/parser": "^7.13.0",
