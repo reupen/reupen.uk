@@ -1,20 +1,20 @@
 ---
+import { Icon } from "astro-icon/components"
+
 export interface Props {
   class?: string
-  iconClass: string
+  iconName: string
   href: string
   id?: string
   hidden?: "hidden"
 }
 
-const { href, iconClass, ...rest } = Astro.props
+const { href, iconName, ...rest } = Astro.props
 ---
 
 <li {...rest}>
   <a href={href} rel="noreferrer">
-    <span>
-      <i class={iconClass}></i>
-    </span>
+    <Icon name={iconName} />
     <slot />
   </a>
 </li>
@@ -22,32 +22,31 @@ const { href, iconClass, ...rest } = Astro.props
 <style>
   li {
     margin: 0.5rem 0 0.25rem;
+    padding: 0;
 
     & a {
       display: inline-flex;
+      align-items: center;
     }
 
-    & i {
+    & [data-icon] {
+      margin: 0 0.4rem 0 0;
       text-align: center;
-      width: 1.45em;
-      margin-left: -0.1rem;
-      padding-right: 0.25rem;
+      font-size: 35px;
     }
 
     @media (min-width: 600px) {
       display: inline;
-      padding-right: 1.1rem;
+      padding-right: 1rem;
       margin: 0;
 
       &.email {
-        margin-left: -0.15rem;
+        margin-left: -0.05rem;
       }
 
-      & i {
-        width: initial;
-        text-align: left;
-        padding-right: 0.4rem;
-        margin-left: 0.1rem;
+      & [data-icon] {
+        margin-right: 0.25rem;
+        margin-left: 0;
       }
     }
   }

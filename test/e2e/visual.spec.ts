@@ -6,7 +6,9 @@ PAGES.forEach((path) => {
     test("matches the saved screenshot", async ({ page }) => {
       await page.goto(path)
       await expect(page).toHaveScreenshot(
-        [path.replaceAll(/(^\/|\/$)/g, ""), "screenshot.png"],
+        [path.replaceAll(/(^\/|\/$)/g, ""), "screenshot.png"].filter(
+          (segment) => segment,
+        ),
         {
           fullPage: true,
         },
