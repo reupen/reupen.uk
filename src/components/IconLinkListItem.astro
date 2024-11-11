@@ -1,18 +1,33 @@
 ---
+import { Icon } from "astro-icon/components"
 export interface Props {
   href: string
-  iconClass: string
+  iconName: string
 }
 
-const { href, iconClass, ...rest } = Astro.props
+const { href, iconName, ...rest } = Astro.props
 ---
 
 <li>
   <a href={href} {...rest}>
-    <span class="fa-li">
-      <i class={iconClass}></i>
-    </span>
+    <Icon name={iconName} />
     <slot />
   </a>
   <slot name="suffix" />
 </li>
+
+<style>
+  li {
+    margin-left: 0.2rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  [data-icon] {
+    font-size: 30px;
+    margin-right: 0.35rem;
+  }
+</style>

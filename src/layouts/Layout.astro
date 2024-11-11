@@ -1,6 +1,7 @@
 ---
+import "@fontsource-variable/noto-sans/wdth.css"
+
 import { Hero } from "../components"
-import "./font-awesome.scss"
 
 export interface Props {
   title?: string
@@ -46,10 +47,6 @@ const computedTitle =
 </html>
 
 <style>
-  :root {
-    --fa-li-margin: 1.8rem;
-  }
-
   :global(*),
   :global(*):after,
   :global(*):before {
@@ -59,8 +56,10 @@ const computedTitle =
   :global(html) {
     background: #fff;
     color: #000;
-    font-family: system-ui, sans-serif;
-    font-size: 24px;
+    font-family: "Noto Sans Variable", system-ui, sans-serif;
+    font-size: 23px;
+    font-stretch: 98%;
+    font-weight: 375;
   }
 
   :global(body) {
@@ -68,37 +67,37 @@ const computedTitle =
   }
 
   :global(h1) {
-    font-size: 72px;
-    margin: 0 0 1.5rem;
+    font-size: 68px;
+    margin: 0 0 1.75rem;
     line-height: 1.15;
   }
 
   :global(h2) {
-    font-size: 60px;
-    margin: 2.6rem 0 1.4rem;
+    font-size: 57px;
+    margin: 2.9rem 0 1.5rem;
 
     + :global(h3) {
-      margin-top: 1.6rem;
+      margin-top: 1.65rem;
     }
   }
 
   :global(h3) {
-    font-size: 36px;
+    font-size: 35px;
     margin: 0 0 1.15rem;
   }
 
   :global(p) + :global(h3),
   :global(ul) + :global(h3) {
-    margin-top: 2rem;
+    margin-top: 2.1rem;
   }
 
   :global(h4) {
     font-size: 26px;
-    margin: 1.2rem 0 1rem;
+    margin: 1.2rem 0 1.15rem;
   }
 
   :global(h1, h2, h3, h4) {
-    font-weight: 600;
+    font-weight: 585;
   }
 
   :global(a) {
@@ -106,7 +105,7 @@ const computedTitle =
 
     &,
     :visited {
-      color: #237cc7;
+      color: #2179c4;
     }
 
     &:hover {
@@ -117,16 +116,18 @@ const computedTitle =
   }
 
   :global(p) {
-    line-height: 1.5;
+    line-height: 1.57;
+    margin: 1.01rem 0;
   }
 
   :global(ul) {
-    line-height: 1.5;
-    padding-left: 2rem;
+    line-height: 1.6;
+    padding-left: 1.7rem;
   }
 
   :global(li) {
     margin: 0.5rem 0;
+    padding-left: 0.1rem;
 
     @media (min-width: 600px) {
       margin: 0.25rem 0;
@@ -134,7 +135,7 @@ const computedTitle =
   }
 
   :global(.section) {
-    padding: 2rem 1.5rem;
+    padding: 2.2rem 1.5rem;
   }
 
   :global(.container) {

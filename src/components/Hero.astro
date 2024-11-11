@@ -7,21 +7,18 @@ import SocialListItem from "./SocialListItem.astro"
   <div class="container">
     <h1>Reupen Shah</h1>
     <SocialList>
-      <SocialListItem
-        href="https://github.com/reupen"
-        iconClass="fab fa-github"
-      >
+      <SocialListItem href="https://github.com/reupen" iconName="mdi:github">
         GitHub
       </SocialListItem>
       <SocialListItem
         href="https://linkedin.com/in/reupen"
-        iconClass="fab fa-linkedin"
+        iconName="mdi:linkedin"
       >
         LinkedIn
       </SocialListItem>
       <SocialListItem
         href="#"
-        iconClass="far fa-at"
+        iconName="mdi:at"
         class="email"
         id="email"
         hidden="hidden"
@@ -36,7 +33,11 @@ import SocialListItem from "./SocialListItem.astro"
   .hero {
     background: #146eb8;
     color: #fff;
-    padding: 2.95rem 1.5rem 2.85rem;
+    padding: 3.5rem 1.5rem 2.9rem;
+
+    @media (min-width: 600px) {
+      padding: 3.35rem 1.5rem 2.9rem;
+    }
 
     :global(a) {
       &,
