@@ -40,7 +40,7 @@
     "@playwright/test": "^1.48.2",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.3",
     "astro-compress": "^2.3.5",
     "cssnano": "^7.0.6",
     "eslint": "^9.17.0",
