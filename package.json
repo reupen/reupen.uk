@@ -31,8 +31,8 @@
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource-variable/noto-sans": "^5.1.0",
     "@iconify-json/mdi": "^1.2.1",
-    "astro": "^5.0.2",
-    "astro-icon": "^1.1.4"
+    "astro": "^5.1.1",
+    "astro-icon": "^1.1.5"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
