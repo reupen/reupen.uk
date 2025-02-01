@@ -31,7 +31,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource-variable/noto-sans": "^5.1.0",
     "@iconify-json/mdi": "^1.2.1",
-    "astro": "^5.1.1",
+    "astro": "^5.2.3",
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^22.10.3",
-    "astro-compress": "^2.3.5",
+    "astro-compress": "^2.3.6",
     "cssnano": "^7.0.6",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
