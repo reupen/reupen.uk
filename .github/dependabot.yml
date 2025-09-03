@@ -31,3 +31,7 @@ updates:
         patterns:
           - "postcss*"
           - "cssnano"
+    ignore:
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
