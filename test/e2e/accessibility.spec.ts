@@ -1,16 +1,22 @@
 import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "@playwright/test"
 
-import { PAGES } from "./constants.ts"
+import { COLOUR_SCHEMES, PAGES } from "./constants.ts"
 
 PAGES.forEach((path) => {
-  test.describe(path, () => {
-    test("passes accessibility checks", async ({ page }) => {
-      await page.goto(path)
+  COLOUR_SCHEMES.forEach((colourScheme) => {
+    test.describe(`${colourScheme} mode`, () => {
+      test.use({ colorScheme: colourScheme })
 
-      const axeResults = await new AxeBuilder({ page }).analyze() // 4
+      test.describe(path, () => {
+        test("passes accessibility checks", async ({ page }) => {
+          await page.goto(path)
 
-      expect(axeResults.violations).toEqual([])
+          const axeResults = await new AxeBuilder({ page }).analyze()
+
+          expect(axeResults.violations).toEqual([])
+        })
+      })
     })
   })
 })

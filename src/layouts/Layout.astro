@@ -46,66 +46,73 @@ const computedTitle =
   </body>
 </html>
 
-<style>
-  :global(*),
-  :global(*):after,
-  :global(*):before {
+<style is:global>
+  *,
+  *:after,
+  *:before {
     box-sizing: border-box;
   }
 
-  :global(html) {
-    background: #fff;
-    color: #000;
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    background: light-dark(#fff, #151515);
+    color: light-dark(#000, #fff);
     font-family: "Noto Sans Variable", system-ui, sans-serif;
     font-size: 23px;
     font-stretch: 98%;
     font-weight: 375;
   }
 
-  :global(body) {
+  body {
     margin: 0;
   }
 
-  :global(h1) {
+  h1 {
     font-size: 68px;
     margin: 0 0 1.75rem;
     line-height: 1.15;
   }
 
-  :global(h2) {
+  h2 {
     font-size: 57px;
     margin: 2.9rem 0 1.5rem;
 
-    + :global(h3) {
+    + h3 {
       margin-top: 1.65rem;
     }
   }
 
-  :global(h3) {
+  h3 {
     font-size: 35px;
     margin: 0 0 1.15rem;
   }
 
-  :global(p) + :global(h3),
-  :global(ul) + :global(h3) {
+  p + h3,
+  ul + h3 {
     margin-top: 2.1rem;
   }
 
-  :global(h4) {
+  h4 {
     font-size: 26px;
     margin: 1.2rem 0 1.15rem;
   }
 
-  :global(h1, h2, h3, h4) {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-weight: 585;
   }
 
-  :global(a) {
+  a {
     text-decoration: none;
 
     &,
     :visited {
-      color: #2179c4;
+      color: light-dark(#2179c4, #3c93fb);
     }
 
     &:hover {
@@ -115,17 +122,17 @@ const computedTitle =
     }
   }
 
-  :global(p) {
+  p {
     line-height: 1.57;
     margin: 1.01rem 0;
   }
 
-  :global(ul) {
+  ul {
     line-height: 1.6;
     padding-left: 1.7rem;
   }
 
-  :global(li) {
+  li {
     margin: 0.5rem 0;
     padding-left: 0.1rem;
 
@@ -134,11 +141,11 @@ const computedTitle =
     }
   }
 
-  :global(.section) {
+  .section {
     padding: 2.2rem 1.5rem;
   }
 
-  :global(.container) {
+  .container {
     max-width: 960px;
     margin: 0 auto;
   }
