@@ -8,7 +8,7 @@ import jsxA11y from "eslint-plugin-jsx-a11y"
 import tseslint from "typescript-eslint"
 
 export default defineConfig(
-  globalIgnores([".astro", "src/env.d.ts"]),
+  globalIgnores([".astro/", "dist/", "src/env.d.ts"]),
   eslint.configs.recommended,
   tseslint.configs.recommended,
   tseslint.configs.stylistic,
