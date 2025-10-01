@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/sitemap": "^3.5.1",
+    "@astrojs/sitemap": "^3.6.0",
     "@fontsource-variable/noto-sans": "^5.2.7",
     "@iconify-json/mdi": "^1.2.3",
-    "astro": "^5.13.5",
+    "astro": "^5.14.1",
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
