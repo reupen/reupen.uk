@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
@@ -69,7 +69,7 @@ jobs:
       version: ${{ steps.get-version.outputs.version }}
     steps:
       - name: Git clone repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - id: get-version
         name: Get Playwright version
@@ -86,7 +86,7 @@ jobs:
       image: mcr.microsoft.com/playwright:v${{ needs.get-playwright-version.outputs.version }}
     steps:
       - name: Git clone repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
