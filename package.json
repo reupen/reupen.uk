@@ -35,7 +35,7 @@
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.10.2",
+    "@axe-core/playwright": "^4.11.0",
     "@eslint/js": "^9.34.0",
     "@playwright/test": "^1.55.1",
     "@types/eslint-config-prettier": "^6.11.3",
