@@ -1,7 +1,7 @@
-import { defineConfig } from "astro/config"
+import sitemap from "@astrojs/sitemap"
 import compress from "astro-compress"
 import icon from "astro-icon"
-import sitemap from "@astrojs/sitemap"
+import { defineConfig } from "astro/config"
 
 export default defineConfig({
   site: "https://reupen.uk",

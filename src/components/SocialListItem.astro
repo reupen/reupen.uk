@@ -3,10 +3,10 @@ import { Icon } from "astro-icon/components"
 
 export interface Props {
   class?: string
-  iconName: string
-  href: string
-  id?: string
   hidden?: "hidden"
+  href: string
+  iconName: string
+  id?: string
 }
 
 const { href, iconName, ...rest } = Astro.props
