@@ -1,0 +1,152 @@
+---
+import "@fontsource-variable/noto-sans/wdth.css"
+
+import { Hero } from "../components"
+
+export interface Props {
+  description?: string
+  title?: string
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const siteTitle = "Reupen Shah"
+const siteAuthor = "Reupen Shah"
+const { title, description, ...rest } = Astro.props
+
+const computedTitle =
+  title && title !== siteTitle ? `${title} – ${siteTitle}` : siteTitle
+---
+
+<html lang="en" {...rest}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/sitemap-index.xml" rel="sitemap" />
+    <link href={canonicalURL} rel="canonical" />
+    <title>{computedTitle}</title>
+    <meta name="generator" content={Astro.generator} />
+    {description && <meta name="description" content={description} />}
+    <meta name="og:title" content={computedTitle} />
+    <meta name="og:site_name" content={siteTitle} />
+    {description && <meta name="og:description" content={description} />}
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content={siteAuthor} />
+    <meta name="twitter:title" content={computedTitle} />
+    {description && <meta name="twitter:description" content={description} />}
+  </head>
+  <body>
+    <Hero />
+    <section class="section">
+      <div class="container">
+        <main><slot /></main>
+      </div>
+    </section>
+  </body>
+</html>
+
+<style is:global>
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    background: light-dark(#fff, #151515);
+    color: light-dark(#000, #fff);
+    font-family: "Noto Sans Variable", system-ui, sans-serif;
+    font-size: 23px;
+    font-stretch: 98%;
+    font-weight: 375;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 68px;
+    margin: 0 0 1.75rem;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: 57px;
+    margin: 2.9rem 0 1.5rem;
+
+    + h3 {
+      margin-top: 1.65rem;
+    }
+  }
+
+  h3 {
+    font-size: 35px;
+    margin: 0 0 1.15rem;
+  }
+
+  p + h3,
+  ul + h3 {
+    margin-top: 2.1rem;
+  }
+
+  h4 {
+    font-size: 26px;
+    margin: 1.2rem 0 1.15rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 585;
+  }
+
+  a {
+    text-decoration: none;
+
+    &,
+    :visited {
+      color: light-dark(#2179c4, #3c93fb);
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 0.075em;
+      text-underline-offset: 0.15em;
+    }
+  }
+
+  p {
+    line-height: 1.57;
+    margin: 1.01rem 0;
+  }
+
+  ul {
+    line-height: 1.6;
+    padding-left: 1.7rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+    padding-left: 0.1rem;
+
+    @media (min-width: 600px) {
+      margin: 0.25rem 0;
+    }
+  }
+
+  .section {
+    padding: 2.2rem 1.5rem;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+</style>

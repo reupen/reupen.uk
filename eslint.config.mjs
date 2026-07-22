@@ -1,0 +1,58 @@
+// @ts-check
+
+import eslint from "@eslint/js"
+import eslintPluginAstro from "eslint-plugin-astro"
+import jsxA11y from "eslint-plugin-jsx-a11y-x"
+import perfectionist from "eslint-plugin-perfectionist"
+import { defineConfig, globalIgnores } from "eslint/config"
+import tseslint from "typescript-eslint"
+
+export default defineConfig(
+  globalIgnores([".astro/", "dist/", "src/env.d.ts"]),
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  tseslint.configs.stylistic,
+  eslintPluginAstro.configs.recommended,
+  jsxA11y.configs.recommended,
+  {
+    plugins: {
+      perfectionist,
+    },
+    rules: {
+      "perfectionist/sort-interfaces": "error",
+      "perfectionist/sort-exports": "error",
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          internalPattern: ["^@/"],
+          groups: [
+            ["type", "builtin", "external"],
+            ["type-internal", "internal"],
+            [
+              "type-parent",
+              "type-sibling",
+              "type-index",
+              "parent",
+              "sibling",
+              "index",
+            ],
+            "unknown",
+          ],
+          type: "natural",
+        },
+      ],
+      "perfectionist/sort-jsx-props": [
+        "error",
+        {
+          customGroups: [
+            {
+              groupName: "prioritised",
+              elementNamePattern: ["^(client|is):", "^(id|name|property|src)$"],
+            },
+          ],
+          groups: ["prioritised", "unknown", "shorthand-prop"],
+        },
+      ],
+    },
+  },
+)

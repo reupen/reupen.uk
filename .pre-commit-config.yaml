@@ -1,0 +1,37 @@
+ci:
+  skip:
+    - prettier
+    - eslint
+    - astro-check
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: check-yaml
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.22
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: npm exec --no -- prettier --write --ignore-unknown
+        language: system
+        types: [text]
+      - id: eslint
+        name: eslint
+        entry: npm exec --no -- eslint --fix --max-warnings 0 .
+        language: system
+        files: \.(([cm]?(j|t)s)|astro|mdx)$
+        exclude: ^src/env\.d\.ts$
+      - id: astro-check
+        name: astro check
+        entry: npm exec --no -- astro check --minimumFailingSeverity hint
+        language: system
+        pass_filenames: false

@@ -1,0 +1,57 @@
+{
+  "name": "reupen.uk",
+  "private": true,
+  "description": "reupen.uk website",
+  "version": "1.0.0",
+  "author": "Reupen Shah",
+  "type": "module",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reupen/reupen.uk"
+  },
+  "scripts": {
+    "astro": "astro",
+    "check": "astro check --minimumFailingSeverity hint",
+    "clean": "shx rm -rf dist node_modules/.astro",
+    "build": "astro build",
+    "dev": "astro dev",
+    "format:check": "prettier -c .",
+    "lint": "eslint --max-warnings 0 .",
+    "lint:fix": "npm run lint -- --fix",
+    "preview": "astro preview",
+    "start": "astro dev",
+    "pretest": "npm run build",
+    "test": "python scripts/run_in_playwright_container.py \"npm ci && npm exec --no -- playwright test\"",
+    "test:report": "playwright show-report test/e2e/output/html",
+    "pretest:update": "npm run build",
+    "test:update": "python scripts/run_in_playwright_container.py \"npm ci && npm exec --no -- playwright test --update-snapshots\""
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource-variable/noto-sans": "^5.2.10",
+    "@iconify-json/mdi": "^1.2.3",
+    "astro": "^7.1.3",
+    "astro-icon": "^1.1.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^22.19.19",
+    "astro-compress": "^2.4.1",
+    "cssnano": "^8.0.2",
+    "eslint": "^10.6.0",
+    "eslint-plugin-astro": "^2.1.1",
+    "eslint-plugin-jsx-a11y-x": "^0.2.0",
+    "eslint-plugin-perfectionist": "^5.9.1",
+    "postcss-custom-media": "^12.0.1",
+    "postcss-preset-env": "^11.3.2",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "sass": "^1.101.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.1"
+  }
+}
