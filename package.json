@@ -32,7 +32,7 @@
     "@astrojs/sitemap": "^3.7.4",
     "@fontsource-variable/noto-sans": "^5.3.0",
     "@iconify-json/mdi": "^1.2.3",
-    "astro": "^7.4.4",
+    "astro": "^7.4.12",
     "astro-icon": "^1.2.0"
   },
   "devDependencies": {
